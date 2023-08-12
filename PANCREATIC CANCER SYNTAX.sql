@@ -1,10 +1,4 @@
-select * from pancreatic_cancer
-select * from pancreatic_cancer_2
-
-select * from pancreatic_cancer
-where diagnosis = 2
-
----CLEANING---
+--- DATA CLEANING---
 alter table pancreatic_cancer
 add PDAC Varchar(50);
 
@@ -34,7 +28,7 @@ Update Pancreatic_Cancer
 
 
 
----EXPLORATION-----
+---DATASET EXPLORATION-----
 
 ----Average Age of Patients---
 Select AVG(Age) as AVG_Age
@@ -82,11 +76,7 @@ Select
 		Group By diagnoses
 
 
-----Average biomarker Levels For Each Cohorts----- What's the difference between the two cohorts?
----Is it just time or are there other factors? 
----Generally, the higher a biomarker is, the more likely it's an indicator of a certain condition. The different cohorts present with different biomarker levels for
-----for the diagnosis they indicate. This means that time of collection (or sample colleceted) of sample influences the diagnosis.
-
+----Average biomarker Levels For Each Cohorts----- 
 
 Select 
 		distinct patient_cohort, diagnoses,
@@ -120,11 +110,3 @@ SELECT
 		from Pancreatic_Cancer
 		Order By plasma_CA19_9 desc
 
-select 
-		TOP 10 
-		plasma_CA19_9
-		from Pancreatic_Cancer
-		where PDAC is not null
-		
-		
-	select * from Pancreatic_Cancer	
